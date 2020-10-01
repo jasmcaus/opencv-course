@@ -1,4 +1,4 @@
-# Opencv with Python in 5 Hours
+# OpenCV with Python in 5 Hours
 Notes and code used in my Python and OpenCV course
 
 # Course Outline (with timestamps)
