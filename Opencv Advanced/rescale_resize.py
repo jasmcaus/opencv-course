@@ -1,3 +1,5 @@
+#pylint:disable=no-member
+
 import cv2 as cv
 
 # img = cv.imread('Photos/cat.jpg')
