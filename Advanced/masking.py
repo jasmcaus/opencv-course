@@ -3,7 +3,7 @@
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('../Media Files/Photos/cats 2.jpg')
+img = cv.imread('../Resources/Photos/cats 2.jpg')
 cv.imshow('Cats', img)
 
 blank = np.zeros((300,300), dtype='uint8')

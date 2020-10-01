@@ -8,7 +8,7 @@ cv.imshow('Cats', img)
 cv.waitKey(0)
 
 # Reading Videos
-capture = cv.VideoCapture('../Media Files/Videos/dog.mp4')
+capture = cv.VideoCapture('../Resources/Videos/dog.mp4')
 
 while True:
     isTrue, frame = capture.read()
