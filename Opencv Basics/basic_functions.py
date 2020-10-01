@@ -2,8 +2,8 @@
 
 import cv2 as cv
 
-img = cv.imread('Photos/boston.jpg')
-cv.imshow('Boston', img)
+img = cv.imread('../Media Files/Photos/park.jpg')
+cv.imshow('Park', img)
 
 # Converting to grayscale
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
