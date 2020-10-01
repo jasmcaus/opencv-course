@@ -1,7 +1,7 @@
 # OpenCV with Python in 5 Hours
 Notes and code used in my Python and OpenCV course
 
-## General Course Outline
+# Course Outline (with timestamps)
 ### 1. Installing the necessary packages
 Besides installing OpenCV, we cover the installation of the following packages:
 
