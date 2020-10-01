@@ -29,5 +29,5 @@ Notes and code used in my Python and OpenCV course
 ### 5. Capstone: A Deep Computer Vision model to classify between the characters in The Simpsons
     
 ## Credits
-The images in the [Photos](/tree/master/Photos) and [Videos](/tree/master/Videos) folders were downloaded from [Unsplash](http://unsplash.com) and [Pixabay](http://pixabay.com), unless otherwise mentioned.
-The images in the [Faces](/tree/master/Faces) folder were procurred from a [repo](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset) on Kaggle.
+The images in the [Photos](https://github.com/jasmcaus/opencv-course/tree/master/Photos) and [Videos](https://github.com/jasmcaus/opencv-course/tree/master/Videos) folders were downloaded from [Unsplash](http://unsplash.com) and [Pixabay](http://pixabay.com), unless otherwise mentioned.
+The images in the [Faces](https://github.com/jasmcaus/opencv-course/tree/master/Faces) folder were procurred from a [repo](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset) on Kaggle.
