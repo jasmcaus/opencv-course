@@ -12,7 +12,7 @@ people = ['Ben Afflek', 'Elton John', 'Jerry Seinfield', 'Madonna', 'Mindy Kalin
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read('face_trained.yml')
 
-img = cv.imread(r'C:\Users\jas\Documents\dev\older\Faces\val\elton_john\httpafilesbiographycomimageuploadcfillcssrgbdprgfacehqwMTEODAOTcxNjcMjczMjkzjpg.jpg')
+img = cv.imread(r'../Media Files\Faces\val\elton_john/1.jpg')
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Person', gray)
