@@ -38,5 +38,5 @@ Besides installing OpenCV, we cover the installation of the following packages:
     > Building a Deep Computer Vision model to classify between the characters in the popular TV series The Simpsons
 
 # Credits
-The images in the [Photos](https://github.com/jasmcaus/opencv-course/tree/master/Media%20Files/Photos) and [Videos](https://github.com/jasmcaus/opencv-course/tree/master/Media%20Files/Videos) folders were downloaded from [Unsplash](http://unsplash.com) and [Pixabay](http://pixabay.com), unless otherwise mentioned.
-The images in the [Faces](https://github.com/jasmcaus/opencv-course/tree/master/Media%20Files/Faces) folder were procurred from a [repo](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset) on Kaggle.
+The images in the [Photos](https://github.com/jasmcaus/opencv-course/tree/master/Resources/Photos) and [Videos](https://github.com/jasmcaus/opencv-course/tree/master/Resources/Videos) folders were downloaded from [Unsplash](http://unsplash.com) and [Pixabay](http://pixabay.com), unless otherwise mentioned.
+The images in the [Faces](https://github.com/jasmcaus/opencv-course/tree/master/Resources/Faces) folder were procurred from a [repo](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset) on Kaggle.
