@@ -21,7 +21,7 @@ Besides installing OpenCV, we cover the installation of the following packages:
     > Basic Contour Detection
     
 ### 3. Advanced Concepts:
-    > Switching between Colour Spaces (RGG, BGR, Grayscale, HSV and L>a>b)
+    > Switching between Colour Spaces (RGB, BGR, Grayscale, HSV and L*a*b)
     > Splitting and Merging Colour Channels
     > Blurring Techniques
     > BITWISE operations
