@@ -6,10 +6,10 @@ Notes and code used in my Python and OpenCV course
 Besides installing OpenCV, we cover the installation of the following packages:
 
 `caer` is a powerful utilities package with tons of useful helper functions for most Computer Vision taks
-<pre-$ pip install caer</pre>
+<pre>$ pip install caer</pre>
 
 `canaro` is a Python package solely for Deep Learning models built in Keras
-<pre-$ pip install canaro</pre>
+<pre>$ pip install canaro</pre>
 
 
 ### 2. Basic Concepts:
