@@ -5,7 +5,7 @@ Notes and code used in my Python and OpenCV course
 ### 1. Installing the necessary packages
 Besides installing OpenCV, we cover the installation of the following packages:
 
-`caer` is a powerful utilities package with tons of useful helper functions for most Computer Vision taks
+`caer` is a powerful utilities package with tons of useful helper functions for most Computer Vision tasks
 <pre>$ pip install caer</pre>
 
 `canaro` is a Python package solely for Deep Learning models built in Keras
@@ -16,9 +16,9 @@ Besides installing OpenCV, we cover the installation of the following packages:
 - Reading Images and Video
 - Resizing and Rescaling Images and Video Frames
 - Drawing Shapes and Placing text on images
-- 5 Commonly Used Methods in OpenCV
-- Basic Image Transformations
-- Basic Contour Detection
+- 5 Essential Methods in OpenCV
+- Image Transformations
+- Contour Detection
     
 ### 3. Advanced Concepts:
 - Switching between Colour Spaces (RGB, BGR, Grayscale, HSV and L*a*b)
