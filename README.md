@@ -1,5 +1,5 @@
 # OpenCV with Python in 4 Hours
-Notes and code used in my Python and OpenCV course
+Notes and code used in my [Python and OpenCV course](https://youtu.be/gLDJEY49M38)
 
 # Course Outline (with timestamps)
 ### 1. Installing the necessary packages
