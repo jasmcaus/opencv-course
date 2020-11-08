@@ -21,7 +21,7 @@ cv.imshow('Person', gray)
 faces_rect = haar_cascade.detectMultiScale(gray, 1.1, 4)
 
 for (x,y,w,h) in faces_rect:
-    faces_roi = gray[y:y+h,x:x+h]
+    faces_roi = gray[y:y+h,x:x+w]
 
     label, confidence = face_recognizer.predict(faces_roi)
     print(f'Label = {people[label]} with a confidence of {confidence}')
