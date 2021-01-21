@@ -12,6 +12,7 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
+from sklearn.model_selection import train_test_split
 
 
 IMG_SIZE = (80,80)
@@ -58,8 +59,9 @@ featureSet = caer.normalize(featureSet)
 labels = to_categorical(labels, len(characters))
 
 # Creating train and validation data
-split_data = caer.train_val_split(featureSet, labels, val_ratio=.2)
+split_data = train_test_split(featureSet, labels, val_ratio=.2)
 x_train, x_val, y_train, y_val = (np.array(item) for item in split_data)
+
 
 # Deleting variables to save memory
 del train
