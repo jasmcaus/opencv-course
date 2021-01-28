@@ -1,0 +1,21 @@
+name: Build docs
+
+on:
+  push:
+      branches:
+        - master
+  release:
+      branches:
+        - master
+      
+env:
+    PYTHON_VERSION: 3.x
+
+jobs:
+  docs:
+    name: Building Docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: LGTM
+        run: echo "LGTM" #TODO, uncomment
