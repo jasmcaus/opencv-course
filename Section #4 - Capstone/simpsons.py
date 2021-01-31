@@ -58,13 +58,14 @@ featureSet = caer.normalize(featureSet)
 # Converting numerical labels to binary class vectors
 labels = to_categorical(labels, len(characters))
 
+
 # Creating train and validation data
 
 ## NOTE:
 ## In the tutorial, I've use the following line
 ### x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ratio=.2)
 ## However, due to recent API changes in `caer`, this is now a deprecated feature. 
-## Instead, you can use the following line (which use's SKLearn's train-test split feature). 
+## Instead, you can use the following line (which use's SkLearn's train-test split feature). 
 ## Both achieve the same end result 
 
 # Do note that `val_ratio` is now `test_size`. 
@@ -86,18 +87,10 @@ EPOCHS = 10
 datagen = canaro.generators.imageDataGenerator()
 train_gen = datagen.flow(x_train, y_train, batch_size=BATCH_SIZE)
 
-# Create our model
+# Create our model (returns the compiled model)
 model = canaro.models.createSimpsonsModel(IMG_SIZE=IMG_SIZE, channels=channels, output_dim=len(characters), 
                                          loss='binary_crossentropy', decay=1e-7, learning_rate=0.001, momentum=0.9,
                                          nesterov=True)
-
-##### (OPTIONAL) If you solely want the model architecture, go to <https://github.com/jasmcaus/canaro/blob/master/canaro/models/simpsons.py> 
-# and then uncomment the following to compile the model
-
-# # Compiling the model
-# from tensorflow.keras.optimizers import SGD
-# optimizer = SGD(lr=0.001, decay=1e-8, momentum=.9, nesterov=True)
-# model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 model.summary()
 
@@ -111,7 +104,8 @@ training = model.fit(train_gen,
                     validation_steps=len(y_val)//BATCH_SIZE,
                     callbacks = callbacks_list)
 
-characters
+print(characters)
+
 
 """## Testing"""
 
