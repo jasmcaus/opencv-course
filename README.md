@@ -1,11 +1,15 @@
 # OpenCV with Python in 4 Hours
-Notes and code used in my [**Python and OpenCV course**](https://youtu.be/x3c8w2ruhjs)
+Notes and code used in my [**Python and OpenCV course**](https://youtu.be/x3c8w2ruhjs).
+
+# Important Updates:
+`caer.train_val_split()` is a deprecated feature in [`caer`](https://github.com/jasmcaus/caer/). Use `sklearn.model_selection.train_test_split()` instead. See [#9](https://github.com/jasmcaus/opencv-course/issues/9) for more details.
+
 
 # Course Outline (with timestamps)
 ### 1. Installation
 Besides installing OpenCV, we cover the installation of the following packages:
 
-[`caer`](https://github.com/jasmcaus/caer/) is a *lightweight, scalable* Computer Vision library with powerful Image and Video processing operations, designed to help speed up your Computer Vision workflow.
+[`caer`](https://github.com/jasmcaus/caer/) Caer is a *lightweight, scalable* lightweight, high-performance Vision library for high-performance AI research. It simplifies your approach towards Computer Vision by abstracting away unnecessary boilerplate code giving you the **flexibility** to quickly prototype deep learning models or research ideas. 
 <pre>$ pip install caer</pre>
 
 [`canaro`](https://github.com/jasmcaus/canaro) is a Python package solely for Deep Learning models built in Keras
