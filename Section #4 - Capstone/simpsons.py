@@ -59,7 +59,7 @@ featureSet = caer.normalize(featureSet)
 labels = to_categorical(labels, len(characters))
 
 # Creating train and validation data
-split_data = train_test_split(featureSet, labels, val_ratio=.2)
+split_data = train_test_split(featureSet, labels, test_size=.2)
 x_train, x_val, y_train, y_val = (np.array(item) for item in split_data)
 
 
