@@ -12,7 +12,7 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
-from sklearn.model_selection import train_test_split
+import sklearn
 
 
 IMG_SIZE = (80,80)
