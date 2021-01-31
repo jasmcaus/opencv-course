@@ -59,7 +59,16 @@ featureSet = caer.normalize(featureSet)
 labels = to_categorical(labels, len(characters))
 
 # Creating train and validation data
-split_data = train_test_split(featureSet, labels, test_size=.2)
+
+## NOTE:
+## In the tutorial, I've use the following line
+### x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ratio=.2)
+## However, due to recent API changes in `caer`, this is now a deprecated feature. 
+## Instead, you can use the following line (which use's SKLearn's train-test split feature). 
+## Both achieve the same end result 
+
+# Do note that `val_ratio` is now `test_size`. 
+split_data = sklearn.model_selection.train_test_split(featureSet, labels, test_size=.2)
 x_train, x_val, y_train, y_val = (np.array(item) for item in split_data)
 
 
