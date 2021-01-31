@@ -13,7 +13,7 @@ Besides installing OpenCV, we cover the installation of the following packages:
 <pre>$ pip install caer</pre>
 
 [`canaro`](https://github.com/jasmcaus/canaro) is a Python package solely for Deep Learning models built in Keras
-<pre>$ pip install canaro</pre>
+<pre>$ pip install canaro</pre>.
 
 
 ### 2. Basic Concepts:
