@@ -12,7 +12,7 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
-import sklearn
+import sklearn.model_selection as skm
 
 
 IMG_SIZE = (80,80)
@@ -69,7 +69,7 @@ labels = to_categorical(labels, len(characters))
 ## Both achieve the same end result 
 
 # Do note that `val_ratio` is now `test_size`. 
-split_data = sklearn.model_selection.train_test_split(featureSet, labels, test_size=.2)
+split_data = skm.train_test_split(featureSet, labels, test_size=.2)
 x_train, x_val, y_train, y_val = (np.array(item) for item in split_data)
 
 
