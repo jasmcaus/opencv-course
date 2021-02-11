@@ -21,6 +21,9 @@ def create_train():
             img_path = os.path.join(path,img)
 
             img_array = cv.imread(img_path)
+            if img_array is None:
+                continue 
+                
             gray = cv.cvtColor(img_array, cv.COLOR_BGR2GRAY)
 
             faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
