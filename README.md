@@ -1,5 +1,5 @@
 # OpenCV with Python in 4 Hours
-Notes and code used in my [**Python and OpenCV course**](https://youtu.be/oXlwWbU8l2o) on [freeCodeCamp.org]{http://freecodecamp.org}.
+Notes and code used in my [**Python and OpenCV course**](https://youtu.be/oXlwWbU8l2o) on [freeCodeCamp.org](http://freecodecamp.org).
 
 ## Important Updates:
 `caer.train_val_split()` is a deprecated feature in [`caer`](https://github.com/jasmcaus/caer/). Use `sklearn.model_selection.train_test_split()` instead. See [#9](https://github.com/jasmcaus/opencv-course/issues/9) for more details.
