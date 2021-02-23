@@ -7,16 +7,11 @@ Notes and code used in my [**Python and OpenCV course**](https://youtu.be/oXlwWb
 
 # Course Outline (with timestamps)
 ## 1. Installation
-Besides installing OpenCV, we cover the installation of the following packages:
+Besides installing OpenCV, we cover the installation of the following package:
 
-[`Caer`](https://github.com/jasmcaus/caer/) is a *lightweight, high-performance* Vision library for high-performance AI research. It simplifies your approach towards Computer Vision by abstracting away unnecessary boilerplate code giving you the **flexibility** to quickly prototype deep learning models and research ideas. 
+[**`Caer`**](https://github.com/jasmcaus/caer/) is a *lightweight, high-performance* Vision library for high-performance AI research. It simplifies your approach towards Computer Vision by abstracting away unnecessary boilerplate code giving you the **flexibility** to quickly prototype deep learning models and research ideas. 
 ```bash
 $ pip install caer
-```
-
-[`canaro`](https://github.com/jasmcaus/canaro) is a Python package solely for Deep Learning models built in Keras
-```bash
-$ pip install canaro
 ```
 
 
