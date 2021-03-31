@@ -2,6 +2,7 @@
 
 import cv2 as cv
 
+#Read image with opencv and show it
 img = cv.imread('../Resources/Photos/park.jpg')
 cv.imshow('Park', img)
 
