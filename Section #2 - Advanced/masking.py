@@ -6,7 +6,7 @@ import numpy as np
 img = cv.imread('../Resources/Photos/cats 2.jpg')
 cv.imshow('Cats', img)
 
-blank = np.zeros((300,300), dtype='uint8')
+blank = np.zeros(img.shape[:2], dtype='uint8')
 cv.imshow('Blank Image', blank)
 
 circle = cv.circle(blank.copy(), (img.shape[1]//2 + 45,img.shape[0]//2), 100, 255, -1)
