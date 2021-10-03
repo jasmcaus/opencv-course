@@ -1,3 +1,4 @@
+#pylint:disable=no-member (Removes linting problems with cv)
 
 # Installing `caer` and `canaro` since they don't come pre-installed
 # Uncomment the following line:
@@ -12,8 +13,6 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
-import sklearn.model_selection as skm
-
 
 IMG_SIZE = (80,80)
 channels = 1
@@ -60,18 +59,7 @@ labels = to_categorical(labels, len(characters))
 
 
 # Creating train and validation data
-
-## NOTE:
-## In the tutorial, I've use the following line
-### x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ratio=.2)
-## However, due to recent API changes in `caer`, this is now a deprecated feature. 
-## Instead, you can use the following line (which use's SkLearn's train-test split feature). 
-## Both achieve the same end result 
-
-# Do note that `val_ratio` is now `test_size`. 
-split_data = skm.train_test_split(featureSet, labels, test_size=.2)
-x_train, x_val, y_train, y_val = (np.array(item) for item in split_data)
-
+x_train, x_val, y_train, y_val = caer.train_test_split(featureSet, labels, val_ratio=.2)
 
 # Deleting variables to save memory
 del train
