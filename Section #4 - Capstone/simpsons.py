@@ -13,6 +13,7 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
+import scipy
 
 IMG_SIZE = (80,80)
 channels = 1
