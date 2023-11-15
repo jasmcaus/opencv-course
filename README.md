@@ -8,12 +8,23 @@ Notes and code used in my [**Python and OpenCV course**](https://youtu.be/oXlwWb
 
 # Course Outline (with timestamps)
 ## 1. Installation
-Besides installing OpenCV, we cover the installation of the following package:
 
-[**`Caer`**](https://github.com/jasmcaus/caer/) is a *lightweight, high-performance* Vision library for high-performance AI research. It simplifies your approach towards Computer Vision by abstracting away unnecessary boilerplate code giving you the **flexibility** to quickly prototype deep learning models and research ideas. 
+### 1. Using Poetry
+
+Install poetry using your package manager or [official guide](https://python-poetry.org/docs/#installation).
+
+The easiest way to install all required dependencies is as follows:
+
 ```bash
-$ pip install caer
+make install
 ```
+
+### 2. Using pip
+
+```bash
+$ pip install -r requirements.txt
+```
+
 
 
 ## 2. Basic Concepts:
@@ -46,3 +57,7 @@ The images in the [Photos](https://github.com/jasmcaus/opencv-course/tree/master
 
 
 The images in the [Faces](https://github.com/jasmcaus/opencv-course/tree/master/Resources/Faces) folder were procurred from a [repo](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset) on Kaggle.
+
+# Contributors
+Please make sure you have dev dependencies installed and your PR code formatted using `make format` and linted using
+`make lint`

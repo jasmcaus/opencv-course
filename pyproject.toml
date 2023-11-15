@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "OpenCV Python Course"
+version = "0.1.0"
+description = "Notes and code used in my Python and OpenCV course on freeCodeCamp.org."
+authors = ["Jason <https://github.com/jasmcaus>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.4"
+opencv-python = "^4.8.1.78"
+caer = "^2.0.8"
+
+
+[tool.poetry.group.dev.dependencies]
+black = { extras = ["jupyter"], version = "^23.11.0" }
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100
+wrap_length = 100
+multi_line_output = 3
+combine_as_imports = true
+force_alphabetical_sort_within_sections = true
+overwrite_in_place = true
