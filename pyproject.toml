@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "OpenCV Python Course"
+version = "0.1.0"
+description = "Notes and code used in my Python and OpenCV course on freeCodeCamp.org."
+authors = ["Jason <https://github.com/jasmcaus>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+opencv-python = "^4.8.1.78"
+caer = "^2.0.8"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["jupyter"], version = "^23.11.0"}
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
