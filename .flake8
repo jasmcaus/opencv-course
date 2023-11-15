@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E203, E704, W503
+unused-arguments-ignore-abstract-functions = True
+unused-arguments-ignore-overload-functions = True
+
+ignore =
+    # An unused argument starting with an underscore
+    U101,

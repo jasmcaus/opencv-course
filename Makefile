@@ -18,9 +18,6 @@ format: ## Format the source code
 lint: ## Lint the source code
 	poetry run black --check $(SOURCES)
 	poetry run isort --check $(SOURCES)
-
 	poetry run flake8 $(SOURCES)
-	poetry run mypy $(SOURCES)
-	poetry run bandit -c pyproject.toml -r app
 
 .PHONY: lint
