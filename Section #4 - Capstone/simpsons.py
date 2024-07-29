@@ -13,6 +13,9 @@ import gc
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import LearningRateScheduler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten, Dropout, Conv2D, MaxPooling2D
+from tensorflow.keras.optimizers.legacy import SGD
 
 IMG_SIZE = (80,80)
 channels = 1
@@ -59,7 +62,7 @@ labels = to_categorical(labels, len(characters))
 
 
 # Creating train and validation data
-x_train, x_val, y_train, y_val = caer.train_test_split(featureSet, labels, val_ratio=.2)
+x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ratio=.2)
 
 # Deleting variables to save memory
 del train
@@ -76,14 +79,38 @@ datagen = canaro.generators.imageDataGenerator()
 train_gen = datagen.flow(x_train, y_train, batch_size=BATCH_SIZE)
 
 # Create our model (returns the compiled model)
-model = canaro.models.createSimpsonsModel(IMG_SIZE=IMG_SIZE, channels=channels, output_dim=len(characters), 
-                                         loss='binary_crossentropy', decay=1e-7, learning_rate=0.001, momentum=0.9,
-                                         nesterov=True)
+output_dim=10
+
+w, h = IMG_SIZE[:2]
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(w, h,channels)))
+model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+
+model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+
+model.add(Conv2D(256, (3, 3), padding='same', activation='relu')) 
+model.add(Conv2D(256, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+
+model.add(Flatten())
+model.add(Dropout(0.5))
+model.add(Dense(1024, activation='relu'))
+
+# Output Layer
+model.add(Dense(output_dim, activation='softmax'))
 
 model.summary()
 
 # Training the model
-
+optimizer = SGD(learning_rate=0.001, decay=1e-7, momentum=0.9, nesterov=True)
+model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 callbacks_list = [LearningRateScheduler(canaro.lr_schedule)]
 training = model.fit(train_gen,
                     steps_per_epoch=len(x_train)//BATCH_SIZE,
