@@ -3,7 +3,7 @@
 import cv2 as cv
 
 # Read in an image
-img = cv.imread('../Resources/Photos/park.jpg')
+img = cv.imread('Resources/Photos/12.jpg')
 cv.imshow('Park', img)
 
 # Converting to grayscale
@@ -30,6 +30,8 @@ cv.imshow('Eroded', eroded)
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
 
-# Cropping
-cropped = img[50:200, 200:400]
+# Cropping (fix coordinates: this image is 200x200)
+# Original code used x1=200, which produces an empty crop on 200px-wide images.
+cropped = img[50:200, 0:200]
 cv.imshow('Cropped', cropped)
+

@@ -3,7 +3,7 @@
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('../Resources/Photos/park.jpg')
+img = cv.imread('Resources/Photos/12.jpg')
 cv.imshow('Park', img)
 
 # Translation
@@ -48,7 +48,7 @@ cv.imshow('Flip', flip)
 
 # Cropping
 cropped = img[200:400, 300:400]
-cv.imshow('Cropped', cropped)
+# cv.imshow('Cropped', cropped)
 
 
 cv.waitKey(0)
