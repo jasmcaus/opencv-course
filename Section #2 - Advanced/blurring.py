@@ -1,24 +1,34 @@
-#pylint:disable=no-member
+# pylint:disable=no-member
 
 import cv2 as cv
 
-img = cv.imread('../Resources/Photos/cats.jpg')
-cv.imshow('Cats', img)
+# Load the image
+image = cv.imread("../Resources/Photos/pain.jpg")
 
-# Averaging
-average = cv.blur(img, (3,3))
-cv.imshow('Average Blur', average)
+# Check if the image exists
+if image is None:
+    print("Error: Could not load the image. Check the file path.")
+    exit()
+
+# Display original image
+cv.imshow("Original Image", image)
+
+# Average Blur
+average_blur = cv.blur(image, (5, 5))
+cv.imshow("Average Blur", average_blur)
 
 # Gaussian Blur
-gauss = cv.GaussianBlur(img, (3,3), 0)
-cv.imshow('Gaussian Blur', gauss)
+gaussian_blur = cv.GaussianBlur(image, (5, 5), 0)
+cv.imshow("Gaussian Blur", gaussian_blur)
 
 # Median Blur
-median = cv.medianBlur(img, 3)
-cv.imshow('Median Blur', median)
+median_blur = cv.medianBlur(image, 5)
+cv.imshow("Median Blur", median_blur)
 
-# Bilateral
-bilateral = cv.bilateralFilter(img, 10, 35, 25)
-cv.imshow('Bilateral', bilateral)
+# Bilateral Filter
+bilateral_filter = cv.bilateralFilter(image, 15, 75, 75)
+cv.imshow("Bilateral Filter", bilateral_filter)
 
+# Wait for a key press
 cv.waitKey(0)
+cv.destroyAllWindows()

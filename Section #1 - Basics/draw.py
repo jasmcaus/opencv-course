@@ -1,29 +1,155 @@
-#pylint:disable=no-member
+# pylint:disable=no-member
 
 import cv2 as cv
 import numpy as np
 
-blank = np.zeros((500,500,3), dtype='uint8')
-cv.imshow('Blank', blank)
+# Create blank image
+img = np.zeros((500, 500, 3), dtype="uint8")
 
-# 1. Paint the image a certain colour
-blank[200:300, 300:400] = 0,0,255
-cv.imshow('Green', blank)
+# ----------------------------
+# Gradient Background
+# ----------------------------
+for i in range(500):
+    color = (255 - i//3, 120 + i//4, 180)
+    cv.line(img, (0, i), (500, i), color, 1)
 
-# 2. Draw a Rectangle
-cv.rectangle(blank, (0,0), (blank.shape[1]//2, blank.shape[0]//2), (0,255,0), thickness=-1)
-cv.imshow('Rectangle', blank)
+# ----------------------------
+# Decorative Border
+# ----------------------------
+cv.rectangle(img, (10, 10), (490, 490), (255, 255, 255), 3)
+cv.rectangle(img, (20, 20), (480, 480), (0, 255, 255), 2)
 
-# 3. Draw A circle
-cv.circle(blank, (blank.shape[1]//2, blank.shape[0]//2), 40, (0,0,255), thickness=-1)
-cv.imshow('Circle', blank)
+# ----------------------------
+# Filled Rectangle
+# ----------------------------
+cv.rectangle(img, (60, 60), (180, 180), (0, 255, 0), -1)
 
-# 4. Draw a line
-cv.line(blank, (100,250), (300,400), (255,255,255), thickness=3)
-cv.imshow('Line', blank)
+# ----------------------------
+# Circle
+# ----------------------------
+cv.circle(img, (370, 120), 60, (0, 0, 255), -1)
+cv.circle(img, (370, 120), 70, (255, 255, 255), 3)
 
-# 5. Write text
-cv.putText(blank, 'Hello, my name is Jason!!!', (0,225), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0,255,0), 2)
-cv.imshow('Text', blank)
+# ----------------------------
+# Triangle
+# ----------------------------
+pts = np.array([[250, 320], [180, 440], [320, 440]], np.int32)
+cv.fillPoly(img, [pts], (255, 0, 255))
+
+# ----------------------------
+# Line Design
+# ----------------------------
+cv.line(img, (40, 260), (460, 260), (255, 255, 255), 2)
+cv.line(img, (250, 40), (250, 460), (255, 255, 255), 2)
+
+# ----------------------------
+# Small Decorative Circles
+# ----------------------------
+for x in range(60, 461, 50):
+    cv.circle(img, (x, 30), 8, (0, 255, 255), -1)
+    cv.circle(img, (x, 470), 8, (0, 255, 255), -1)
+
+# ----------------------------
+# Text
+# ----------------------------
+cv.putText(img, "WELCOME!", (110, 230),
+           cv.FONT_HERSHEY_DUPLEX, 1.2, (255, 255, 255), 2)
+
+cv.putText(img, "My name is Artdan",
+           (100, 280),
+           cv.FONT_HERSHEY_SIMPLEX,
+           0.8,
+           (0, 0, 0),
+           4)
+
+cv.putText(img, "My name is Artdan",
+           (100, 280),
+           cv.FONT_HERSHEY_SIMPLEX,
+           0.8,
+           (255, 255, 0),
+           2)
+
+# ----------------------------
+# Show Image
+# ----------------------------
+cv.imshow("Creative OpenCV Design", img)
 
 cv.waitKey(0)
+cv.destroyAllWindows()# pylint:disable=no-member
+
+import cv2 as cv
+import numpy as np
+
+# Create blank image
+img = np.zeros((500, 500, 3), dtype="uint8")
+
+# ----------------------------
+# Gradient Background
+# ----------------------------
+for i in range(500):
+    color = (255 - i//3, 120 + i//4, 180)
+    cv.line(img, (0, i), (500, i), color, 1)
+
+# ----------------------------
+# Decorative Border
+# ----------------------------
+cv.rectangle(img, (10, 10), (490, 490), (255, 255, 255), 3)
+cv.rectangle(img, (20, 20), (480, 480), (0, 255, 255), 2)
+
+# ----------------------------
+# Filled Rectangle
+# ----------------------------
+cv.rectangle(img, (60, 60), (180, 180), (0, 255, 0), -1)
+
+# ----------------------------
+# Circle
+# ----------------------------
+cv.circle(img, (370, 120), 60, (0, 0, 255), -1)
+cv.circle(img, (370, 120), 70, (255, 255, 255), 3)
+
+# ----------------------------
+# Triangle
+# ----------------------------
+pts = np.array([[250, 320], [180, 440], [320, 440]], np.int32)
+cv.fillPoly(img, [pts], (255, 0, 255))
+
+# ----------------------------
+# Line Design
+# ----------------------------
+cv.line(img, (40, 260), (460, 260), (255, 255, 255), 2)
+cv.line(img, (250, 40), (250, 460), (255, 255, 255), 2)
+
+# ----------------------------
+# Small Decorative Circles
+# ----------------------------
+for x in range(60, 461, 50):
+    cv.circle(img, (x, 30), 8, (0, 255, 255), -1)
+    cv.circle(img, (x, 470), 8, (0, 255, 255), -1)
+
+# ----------------------------
+# Text
+# ----------------------------
+cv.putText(img, "WELCOME!", (110, 230),
+           cv.FONT_HERSHEY_DUPLEX, 1.2, (255, 255, 255), 2)
+
+cv.putText(img, "My name is Artdan",
+           (100, 280),
+           cv.FONT_HERSHEY_SIMPLEX,
+           0.8,
+           (0, 0, 0),
+           4)
+
+cv.putText(img, "My name is Artdan",
+           (100, 280),
+           cv.FONT_HERSHEY_SIMPLEX,
+           0.8,
+           (255, 255, 0),
+           2)
+
+# ----------------------------
+# Show Image
+# ----------------------------
+cv.imshow("Creative OpenCV Design", img)
+
+cv.waitKey(0)
+cv.destroyAllWindows()

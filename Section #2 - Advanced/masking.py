@@ -1,22 +1,50 @@
-#pylint:disable=no-member
+# pylint:disable=no-member
 
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('../Resources/Photos/cats 2.jpg')
-cv.imshow('Cats', img)
+# Load image
+image = cv.imread("../Resources/Photos/pain.jpg")
 
-blank = np.zeros(img.shape[:2], dtype='uint8')
-cv.imshow('Blank Image', blank)
+# Check if image exists
+if image is None:
+    print("Error: Image not found.")
+    exit()
 
-circle = cv.circle(blank.copy(), (img.shape[1]//2 + 45,img.shape[0]//2), 100, 255, -1)
+cv.imshow("Original Image", image)
 
-rectangle = cv.rectangle(blank.copy(), (30,30), (370,370), 255, -1)
+# Create blank mask
+mask = np.zeros(image.shape[:2], dtype="uint8")
 
-weird_shape = cv.bitwise_and(circle,rectangle)
-cv.imshow('Weird Shape', weird_shape)
+# Draw an ellipse
+ellipse = cv.ellipse(
+    mask.copy(),
+    (image.shape[1] // 2, image.shape[0] // 2),
+    (140, 90),
+    0,
+    0,
+    360,
+    255,
+    -1
+)
 
-masked = cv.bitwise_and(img,img,mask=weird_shape)
-cv.imshow('Weird Shaped Masked Image', masked)
+# Draw a triangle
+triangle = mask.copy()
+points = np.array([
+    [image.shape[1] // 2, 40],
+    [80, image.shape[0] - 40],
+    [image.shape[1] - 80, image.shape[0] - 40]
+], np.int32)
+
+cv.fillPoly(triangle, [points], 255)
+
+# Combine the shapes
+custom_mask = cv.bitwise_and(ellipse, triangle)
+cv.imshow("Custom Mask", custom_mask)
+
+# Apply the mask
+masked_image = cv.bitwise_and(image, image, mask=custom_mask)
+cv.imshow("Masked Image", masked_image)
 
 cv.waitKey(0)
+cv.destroyAllWindows()
