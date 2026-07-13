@@ -1,30 +1,44 @@
-#pylint:disable=no-member
+# pylint:disable=no-member
 
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('../Resources/Photos/park.jpg')
-cv.imshow('Park', img)
+# Load image
+image = cv.imread("../Resources/Photos/nagato.jpg")
 
-blank = np.zeros(img.shape[:2], dtype='uint8')
+# Check if the image was loaded
+if image is None:
+    print("Error: Image not found. Check the file path.")
+    exit()
 
-b,g,r = cv.split(img)
+# Display original image
+cv.imshow("Original Image", image)
 
-blue = cv.merge([b,blank,blank])
-green = cv.merge([blank,g,blank])
-red = cv.merge([blank,blank,r])
+# Create a blank single-channel image
+blank = np.zeros(image.shape[:2], dtype="uint8")
 
+# Split the image into Blue, Green, and Red channels
+blue_channel, green_channel, red_channel = cv.split(image)
 
-cv.imshow('Blue', blue)
-cv.imshow('Green', green)
-cv.imshow('Red', red)
+# Create images showing each color channel
+blue_image = cv.merge([blue_channel, blank, blank])
+green_image = cv.merge([blank, green_channel, blank])
+red_image = cv.merge([blank, blank, red_channel])
 
-print(img.shape)
-print(b.shape)
-print(g.shape)
-print(r.shape)
+# Display color channels
+cv.imshow("Blue Channel", blue_image)
+cv.imshow("Green Channel", green_image)
+cv.imshow("Red Channel", red_image)
 
-merged = cv.merge([b,g,r])
-cv.imshow('Merged Image', merged)
+# Print image dimensions
+print("Original Image Shape:", image.shape)
+print("Blue Channel Shape:", blue_channel.shape)
+print("Green Channel Shape:", green_channel.shape)
+print("Red Channel Shape:", red_channel.shape)
+
+# Merge channels back into one image
+merged_image = cv.merge([blue_channel, green_channel, red_channel])
+cv.imshow("Merged Image", merged_image)
 
 cv.waitKey(0)
+cv.destroyAllWindows()
